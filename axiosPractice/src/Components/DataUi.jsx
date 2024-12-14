@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { deletePost, getPost } from "../Api/PostApi";
 import DataComponent from "./DataComponent";
 
-const DataUi = () => {
-  const [data, setData] = useState([]);
+const DataUi = ({data, setData}) => {
   const [errorMessage, setErrorMessage] = useState();
 
   useEffect(() => {
@@ -22,8 +21,7 @@ const DataUi = () => {
   const onHandleDelete = async (id) => {
     try {
       const res = await deletePost(id);
-      if (res.status === 200) {
-        console.log("Deleted");
+      if (res.status = 200) {
         const newData = data.filter((currentElement) => {
           return currentElement.id != id;
         });
