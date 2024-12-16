@@ -1,11 +1,19 @@
 import React, { useState } from "react";
-import { postData } from "../Api/PostApi";
+import { patchData, postData } from "../Api/PostApi";
 
-const InputContainer = ({ newData, setNewData, data, setData }) => {
+const InputContainer = ({
+  newData,
+  setNewData,
+  data,
+  setData,
+  isEditable,
+  setIsEditable,
+  patchId,
+  setPatchId,
+}) => {
   const handleInputChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    console.log(name, value);
     setNewData((prevData) => ({
       //Remeber the syntax (() => ({}))
       ...prevData,
@@ -15,12 +23,26 @@ const InputContainer = ({ newData, setNewData, data, setData }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    const res = await postData(newData);
-    if ((res.status = 200)) {
-      setData([...data, res.data]); //Remember syntax
-      setNewData({ title: "", body: "" });
+    if (!isEditable) {
+      const res = await postData(newData);
+      if ((res.status = 200)) {
+        console.log(res.data)
+        setData([...data, res.data]);
+        setNewData({ title: "", body: "" });
+      }
+    } else {
+      const res = await patchData(patchId, newData);
+      if ((res.status = 200)) {
+        setData((prevData) =>
+          prevData.map((item) => (
+            item.id === patchId ? { ...item, ...res.data } : item
+          ))
+        );
+        setNewData({ title: "", body: "" }); // Reset the input fields
+        setIsEditable(false); // Switch back to add mode
+        setPatchId(null); // Clear the patchId
+      }
     }
-    console.log(res.status);
   };
   return (
     <div className="flex flex-col justify-center items-center w-2/4 h-auto my-3 bg-gray-100 p-3 rounded-md">
@@ -47,7 +69,7 @@ const InputContainer = ({ newData, setNewData, data, setData }) => {
             className="w-2/4 p-2 m-2  border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button className="w-1/4 p-2 m-2  bg-blue-500 text-white rounded hover:bg-blue-600 transition">
-            Add
+            {isEditable ? "Edit" : "Add"}
           </button>
         </div>
       </form>

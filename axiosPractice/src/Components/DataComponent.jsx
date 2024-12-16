@@ -1,8 +1,35 @@
 import React from "react";
 
-const DataComponent = ({ id, title, body, onHandleDelete }) => {
+const DataComponent = ({
+  id,
+  title,
+  data,
+  setData,
+  body,
+  onHandleDelete,
+  newData,
+  setNewData,
+  isEditable,
+  setIsEditable,
+  setPatchId
+}) => {
   const handleDelete = (id) => {
+    setPatchId(id); 
     onHandleDelete(id);
+  };
+
+  const handleEditChange = (id) => {
+    setPatchId(id)
+    const currentEditObject = data.filter(
+      (currentItem) => currentItem.id === id
+    );
+    if (currentEditObject && currentEditObject.length > 0) {
+      setNewData({
+        title: currentEditObject[0].title,
+        body: currentEditObject[0].body,
+      });
+      setIsEditable(true); 
+    }
   };
   return (
     <div className="flex flex-col items-center justify-between">
@@ -14,7 +41,10 @@ const DataComponent = ({ id, title, body, onHandleDelete }) => {
         <p className="my-2 text-black text-sm">Body: {body}</p>
       </div>
       <div className="mt-6">
-        <button className="p-2 m-2 w-20 border border-white rounded-lg bg-blue-800 text-white">
+        <button
+          onClick={() => handleEditChange(id)}
+          className="p-2 m-2 w-20 border border-white rounded-lg bg-blue-800 text-white"
+        >
           Edit
         </button>
         <button

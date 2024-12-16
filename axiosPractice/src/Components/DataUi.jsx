@@ -2,7 +2,16 @@ import React, { useEffect, useState } from "react";
 import { deletePost, getPost } from "../Api/PostApi";
 import DataComponent from "./DataComponent";
 
-const DataUi = ({data, setData}) => {
+const DataUi = ({
+  data,
+  setData,
+  newData,
+  setNewData,
+  isEditable,
+  setIsEditable,
+  patchId, 
+  setPatchId
+}) => {
   const [errorMessage, setErrorMessage] = useState();
 
   useEffect(() => {
@@ -21,13 +30,11 @@ const DataUi = ({data, setData}) => {
   const onHandleDelete = async (id) => {
     try {
       const res = await deletePost(id);
-      if (res.status = 200) {
+      if ((res.status = 200)) {
         const newData = data.filter((currentElement) => {
           return currentElement.id != id;
         });
         setData(newData);
-        console.log(data);
-        
       }
     } catch (error) {
       setErrorMessage(error.message);
@@ -52,6 +59,14 @@ const DataUi = ({data, setData}) => {
                   title={title}
                   body={body}
                   onHandleDelete={() => onHandleDelete(id)}
+                  data={data}
+                  setData={setData}
+                  newData={newData}
+                  setNewData={setNewData}
+                  isEditable={isEditable}
+                  setIsEditable={setIsEditable}
+                  patchId = {patchId}
+                  setPatchId = {setPatchId}
                 />
               </li>
             );
