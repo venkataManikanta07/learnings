@@ -10,3 +10,10 @@ Learning each one at a time.
 - DataComponent: Had individual component data.
     - used the LIFTING STATE UP. (sent data from child to parent)
 - Crud operations with Json Fake api. 
+
+
+# CRUD APPLICATION WITH JSON SERVER. 
+- setup routing with component pages 
+- host the json data to the server
+        . json-server --watch jsonFileName 
+- integrate with the tailwind 
