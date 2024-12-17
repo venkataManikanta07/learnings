@@ -27,7 +27,7 @@ const Home = () => {
         </Link>
       </div>
       <div className="w-[70%] bg-gray-200">
-        <TableData users={users} headers={headers} />
+        <TableData users={users} setUsers = {setUsers} headers={headers} />
       </div>
     </div>
   );
