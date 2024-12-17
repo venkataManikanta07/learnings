@@ -11,15 +11,10 @@ const TableData = ({ users, setUsers, headers }) => {
       axios
         .delete(`http://localhost:3000/users/${id.toString()}`)
         .then((res) => {
-          const updatedUsers = users.filter((user) => user.id != id);
-
-          const reindexedUsers = updatedUsers.map((user, index) => ({
-            ...user,
-            id: (index + 1).toString(), // Reassign IDs starting from 1
-          }));
-
-          // Update the state
-          setUsers(reindexedUsers);
+          const newUsers = users.filter((user) => {
+            return user.id != id;
+          });
+          setUsers(newUsers);
         })
         .catch((err) => console.log(err));
     }
