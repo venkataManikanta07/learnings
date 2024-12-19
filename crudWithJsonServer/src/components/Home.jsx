@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import TableData from "./TableData";
 import { Link } from "react-router-dom";
+import { DATA_API } from "../utils/constants";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -9,7 +10,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/users")
+      .get(DATA_API)
       .then((res) => setUsers(res.data))
       .catch((err) => console.log(err));
   }, []);

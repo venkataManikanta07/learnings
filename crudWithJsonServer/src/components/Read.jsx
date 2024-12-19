@@ -1,24 +1,24 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { DATA_API } from "../utils/constants";
 
 const Read = () => {
-  const [displayedUser, setDisplayedUser] = useState(null); // Set initial state to null
+  const [displayedUser, setDisplayedUser] = useState(null); 
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/users/" + id)
+      .get(DATA_API + "/"+ id)
       .then((res) => setDisplayedUser(res.data))
       .catch((err) => console.log(err));
-  }, [id]); // Add 'id' as dependency to avoid warnings
+  }, []); 
 
-  console.log(displayedUser);
 
   return (
     <div className="w-full h-screen flex items-center justify-center bg-gray-100">
-      {displayedUser ? ( // Conditional rendering
+      {displayedUser ? ( 
         <div className="bg-white shadow-md rounded-lg p-12 text-center max-w-lg">
           <h1 className="text-4xl font-bold text-blue-600 mb-6">
             User Id: {displayedUser.id}

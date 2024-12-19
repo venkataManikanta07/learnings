@@ -1,0 +1,49 @@
+.header {
+  color: black;
+  font-size: 36px;
+  text-align: center;
+}
+
+.card {
+  background-color: rgb(214, 214, 214);
+  height: 400px;
+  width: 300px;
+  margin: 4px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card > img {
+  height: 200px;
+  width: 200px;
+}
+.products-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.pages-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pages-container > span{
+  font-size: 40px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid black;
+  /* width: 100vw; */
+  min-width: 40px;
+}
+
+.pages-container > span.active {
+  background-color: gray;
+  color: white;
+}
+

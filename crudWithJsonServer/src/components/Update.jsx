@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { DATA_API } from "../utils/constants";
 
 const Update = () => {
   const [editableuser, setEditableUser] = useState({});
@@ -9,7 +10,7 @@ const Update = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/users/" + id)
+      .get(DATA_API + id)
       .then((res) => setEditableUser(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -21,7 +22,7 @@ const Update = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/users/${id}`)
+      .get(`${DATA_API}/${id}`)
       .then((res) => setUser(res.data))
       .catch((err) => console.log(err));
   }, [id]);
@@ -37,7 +38,7 @@ const Update = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-    .put(`http://localhost:3000/users/${id}`, user)
+    .put(`${DATA_API}/${id}`, user)
     .then((res) => console.log(res.data))
     navigate("/")
   };
@@ -52,7 +53,6 @@ const Update = () => {
           Edit User
         </h1>
 
-        {/* Name Input */}
         <div className="mb-4">
           <label
             htmlFor="name"
@@ -71,7 +71,6 @@ const Update = () => {
           />
         </div>
 
-        {/* Email Input */}
         <div className="mb-4">
           <label
             htmlFor="email"
@@ -90,7 +89,6 @@ const Update = () => {
           />
         </div>
 
-        {/* Phone Input */}
         <div className="mb-4">
           <label
             htmlFor="phone"
@@ -109,7 +107,6 @@ const Update = () => {
           />
         </div>
 
-        {/* Submit Button */}
         <div className="flex justify-center mt-6">
           <button
             type="submit"

@@ -1,15 +1,15 @@
 import axios from "axios";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { DATA_API } from "../utils/constants";
 
 const TableData = ({ users, setUsers, headers }) => {
   const navigate = useNavigate();
   const handleDelete = (id) => {
-    console.log("Inside del ", id);
     const confirm = window.confirm("Would you like to delete?");
     if (confirm) {
       axios
-        .delete(`http://localhost:3000/users/${id.toString()}`)
+        .delete(`${DATA_API}/${id.toString()}`)
         .then((res) => {
           const newUsers = users.filter((user) => {
             return user.id != id;

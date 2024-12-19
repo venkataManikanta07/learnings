@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { DATA_API } from "../utils/constants";
 
 const Create = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const Create = () => {
 
     // Step 1: Fetch existing users
     axios
-      .get("http://localhost:3000/users")
+      .get(DATA_API)
       .then((res) => {
         const existingUsers = res.data;
 
@@ -44,7 +45,7 @@ const Create = () => {
         };
 
         // Step 4: Send a POST request to add the new user
-        return axios.post("http://localhost:3000/users", userWithId);
+        return axios.post(DATA_API, userWithId);
       })
       .then((res) => {
         console.log("User added successfully:", res.data);

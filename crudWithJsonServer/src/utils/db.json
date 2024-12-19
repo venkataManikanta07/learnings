@@ -1,16 +1,88 @@
 {
   "users": [
     {
+      "id": "1",
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "phone": "1234567890"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "phone": "9876543210"
+    },
+    {
+      "id": "3",
+      "name": "Alice Borderland",
+      "email": "alice.j@example.com",
+      "phone": "5678901234"
+    },
+    {
+      "id": "4",
+      "name": "Bob Williams",
+      "email": "bob.williams@example.com",
+      "phone": "3456789012"
+    },
+    {
+      "id": "6",
+      "name": "Eve Adams",
+      "email": "eve.adams@example.com",
+      "phone": "7654321098"
+    },
+    {
+      "id": "7",
+      "name": "David Miller",
+      "email": "david.miller@example.com",
+      "phone": "6543210987"
+    },
+    {
+      "id": "8",
+      "name": "Sophia Taylor",
+      "email": "sophia.taylor@example.com",
+      "phone": "5432109876"
+    },
+    {
+      "id": "9",
+      "name": "Liam Scott",
+      "email": "liam.scott@example.com",
+      "phone": "4321098765"
+    },
+    {
+      "id": "10",
+      "name": "Olivia Martin",
+      "email": "olivia.martin@example.com",
+      "phone": "3210987654"
+    },
+    {
+      "id": "11",
+      "name": "Emma Davis",
+      "email": "emma.davis@example.com",
+      "phone": "2109876543"
+    },
+    {
       "id": "12",
       "name": "VENKATA MANIKANTA DOMA",
       "email": "sanumani98@gmail.com",
       "phone": "08096564476"
     },
     {
+      "id": "13",
+      "name": "Michael Brown",
+      "email": "michael.brown@example.com",
+      "phone": "1098765432"
+    },
+    {
       "id": "14",
-      "name": "VENKATA MANIKANTA DOMA",
-      "email": "sanumani98@gmail.com",
-      "phone": "08096564476"
+      "name": "Emily White",
+      "email": "emily.white@example.com",
+      "phone": "0987654321"
+    },
+    {
+      "id": "15",
+      "name": "sonu n",
+      "email": "98extrathings@gmail",
+      "phone": "9827498324749837"
     }
   ]
 }
