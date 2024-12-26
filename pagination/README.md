@@ -1,7 +1,6 @@
 # Pagination 
 
-- Fetch the Json dummmy data of products 
-- Created UI with that data of Image, Title, Description. 
-- Created Pagination with Span elements
-    - added onclick and change the state of the current page. 
-- link : https://www.youtube.com/watch?v=cBsB7hhOzQI
+- Loaded Dummy Json products data
+- Styled the UI  based on this 
+- Created a pagination.
+- The state changewill of current page will handle the items that has to be displayed. 

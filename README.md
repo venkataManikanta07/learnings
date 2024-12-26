@@ -34,3 +34,17 @@ Learning each one at a time.
 - Edit will go to the edit user page base on the Id and edit the existing user. 
 - Delete will remove the user from the Json. 
 
+# Pagination 
+
+- Loaded Dummy Json products data
+- Styled the UI  based on this 
+- Created a pagination.
+- The state changewill of current page will handle the items that has to be displayed. 
+
+# CAROUSEL 
+
+- Design the Carousel with single image 
+- Use absolute relative to design them accordingly 
+- Transform -trasnlate-x-1/2 to left align properly
+- maintain a constant state of the image slide
+- use the functions and manipulate the images based on the click. 
