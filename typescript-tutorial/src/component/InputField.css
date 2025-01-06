@@ -1,0 +1,50 @@
+.input{
+    width: 50vw;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.inputBox {
+    width: 100%;
+    height: 50px;
+    border-radius: 8px; /* Slightly rounded corners for a clean look */
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 16px; 
+    font-size: 16px; 
+    font-family: 'Inter', sans-serif; /* Modern font */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth hover and focus effects */
+    background-color: #f9f9f9; /* Light background color */
+  }
+  
+  .inputBox:focus {
+    border-color: #007BFF; 
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); 
+    outline: none; 
+    background-color: #fff; /
+  }
+  
+  .inputBox::placeholder {
+    color: #aaa; 
+    font-size: 14px; 
+  }
+  
+.inputButton{
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #314357;
+    color: white;
+    position: absolute;
+    right: 2%;
+    margin: 5px 8px 0 0 ;
+    transition: 0.2s;
+}
+
+.inputButton:active{
+    transform: scale(0.9);
+    box-shadow: 0 0 5px black;
+}

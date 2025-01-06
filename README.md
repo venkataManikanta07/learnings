@@ -60,3 +60,7 @@ Learning each one at a time.
     - Place Self End: for align right / more of float right
 - Modal is opened and closed based on the click and the state is adjusted based on the click. 
 - Targeting a particular div with useRef, if that matches the target element we are closing the modal. 
+
+# TYPE SCRIPT TUTORIAL 
+- Revised / Learned the Required basic typescript 
+- Just a sample todo application with typeScript. 
