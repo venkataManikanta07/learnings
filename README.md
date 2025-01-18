@@ -72,3 +72,11 @@ Learning each one at a time.
 - Created and designed comment component which has usericon name and comment.
 - Comment List component uses the comments Dummy data and calls the comment component.
 - Inside this comment list component, we are again recursively calling the comments component with replies array data if present. (More of a RECURSIVE COMPONENT).
+
+
+# CRUD OPERATIONS IN TRADITIONAL WAY. 
+
+- Design the UI for showing the students data 
+- Routing with react browser router. 
+- Created dummy data with Json Server. 
+- Did the CRUD  OPERATIONS Js traditional methods instead of AXIOS. 
