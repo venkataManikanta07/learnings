@@ -1,6 +1,6 @@
 # learnings
 
-Learning each one at a time.
+Each one at a time.
 
 # AXIOS PRACTICE
 
