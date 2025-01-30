@@ -5,14 +5,14 @@ const Carousel = ({ images }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const nextSlide = () => {
     if (currentImage == images.length - 1) {
-      return;
+      setCurrentImage(0)
     } else {
       setCurrentImage(currentImage + 1);
     }
   };
   const prevSlide = () => {
     if (currentImage == 0) {
-      return;
+      setCurrentImage(images.length - 1)
     } else {
       setCurrentImage(currentImage - 1);
     }
