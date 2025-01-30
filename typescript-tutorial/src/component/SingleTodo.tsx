@@ -1,6 +1,6 @@
 import React from "react";
 import { todoModel } from "../models/todoModel";
-import { Trash2, Pencil, Check } from "lucide-react";
+import { Trash2, Check } from "lucide-react";
 import "../App.css";
 
 interface Props {

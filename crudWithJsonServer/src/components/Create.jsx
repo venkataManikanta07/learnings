@@ -6,14 +6,12 @@ import { DATA_API } from "../utils/constants";
 const Create = () => {
   const navigate = useNavigate();
 
-  // State to hold new user input
   const [newUser, setNewUser] = useState({
     name: "",
     email: "",
     phone: "",
   });
 
-  // Handle input changes for the form
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewUser((prevUser) => ({
@@ -22,34 +20,29 @@ const Create = () => {
     }));
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form behavior
+    e.preventDefault(); 
 
-    // Step 1: Fetch existing users
     axios
       .get(DATA_API)
       .then((res) => {
         const existingUsers = res.data;
 
-        // Step 2: Calculate the next sequential ID
         const nextId =
           existingUsers.length > 0
             ? Math.max(...existingUsers.map((user) => parseInt(user.id))) + 1
             : 1;
 
-        // Step 3: Add the calculated ID to the new user object
         const userWithId = {
           ...newUser,
-          id: nextId.toString(), // Ensure ID is a string
+          id: nextId.toString(), 
         };
 
-        // Step 4: Send a POST request to add the new user
         return axios.post(DATA_API, userWithId);
       })
       .then((res) => {
         console.log("User added successfully:", res.data);
-        navigate("/"); // Navigate to the home page after success
+        navigate("/"); 
       })
       .catch((error) => {
         console.error("Error adding user:", error);
